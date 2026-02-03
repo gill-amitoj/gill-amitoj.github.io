@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Amitoj Singh Portfolio
 
 Minimal brutalist portfolio website built with React, Vite, Tailwind CSS, and Framer Motion.
@@ -75,3 +76,6 @@ npm run build
 ## License
 
 MIT
+=======
+# gill-amitoj.github.io
+>>>>>>> ab6ec986bec3e61c031afc70f81553ef01e9f0a3
