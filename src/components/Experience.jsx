@@ -1,0 +1,121 @@
+import { motion } from 'framer-motion'
+import { useInView } from './hooks/useInView'
+
+const experiences = [
+  {
+    role: 'ML Engineer Intern',
+    company: 'PulseMedica',
+    period: '2024 — Present',
+    description: [
+      'Developing ML pipelines for real-time medical data analysis and patient monitoring systems',
+      'Optimizing model performance and inference latency for production deployment',
+      'Collaborating with cross-functional teams to integrate ML solutions into existing infrastructure',
+      'Implementing automated testing and CI/CD workflows for ML model deployment'
+    ]
+  },
+  {
+    role: 'Teaching Assistant',
+    company: 'University of Alberta',
+    period: '2023 — 2024',
+    description: [
+      'Led tutorial sessions for undergraduate computer science courses',
+      'Mentored 100+ students in data structures, algorithms, and software development',
+      'Developed course materials and programming assignments',
+      'Provided code reviews and technical guidance on student projects'
+    ]
+  }
+]
+
+const lineVariants = {
+  hidden: { scaleY: 0 },
+  visible: {
+    scaleY: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.33, 1, 0.68, 1]
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.33, 1, 0.68, 1]
+    }
+  }
+}
+
+export default function Experience() {
+  const [ref, inView] = useInView({ threshold: 0.2 })
+
+  return (
+    <section id="experience" className="py-32 border-t border-muted/30">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <span className="font-mono text-sm text-muted">02</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-2">Experience</h2>
+        </motion.div>
+
+        <div ref={ref} className="relative">
+          <motion.div
+            variants={lineVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-muted/50 origin-top"
+          />
+
+          <div className="space-y-16">
+            {experiences.map((exp, index) => (
+              <ExperienceItem key={index} experience={exp} index={index} inView={inView} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ExperienceItem({ experience, index, inView }) {
+  const isEven = index % 2 === 0
+
+  return (
+    <motion.div
+      variants={itemVariants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      transition={{ delay: index * 0.2 }}
+      className={`relative grid md:grid-cols-2 gap-8 ${isEven ? '' : 'md:text-right'}`}
+    >
+      <div className={`${isEven ? 'md:pr-16' : 'md:order-2 md:pl-16'}`}>
+        <div className={`${!isEven && 'md:text-left'}`}>
+          <span className="font-mono text-sm text-accent">{experience.period}</span>
+          <h3 className="text-2xl font-bold mt-2">{experience.role}</h3>
+          <p className="text-muted font-mono text-sm mt-1">{experience.company}</p>
+        </div>
+      </div>
+
+      <div className={`${isEven ? 'md:pl-16' : 'md:order-1 md:pr-16'}`}>
+        <ul className={`space-y-3 ${!isEven && 'md:text-left'}`}>
+          {experience.description.map((point, i) => (
+            <li key={i} className="text-muted text-sm flex gap-3">
+              <span className="text-accent shrink-0">—</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="absolute left-0 md:left-1/2 top-2 w-3 h-3 border border-light bg-dark -translate-x-1/2" />
+    </motion.div>
+  )
+}
