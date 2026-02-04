@@ -16,8 +16,8 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-sm border-b border-muted/20"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-mono font-semibold text-lg tracking-tight">
-          AS<span className="text-accent">.</span>
+        <a href="#" className="flex items-center">
+          <img src="/logo.png" alt="Amitoj Singh" className="h-10 w-auto" />
         </a>
         
         <ul className="hidden md:flex items-center gap-8">
