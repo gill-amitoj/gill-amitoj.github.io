@@ -116,14 +116,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      <div className="absolute top-1/4 right-10 hidden lg:block">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="w-64 h-64 border border-light"
-        />
-      </div>
     </section>
   )
 }
