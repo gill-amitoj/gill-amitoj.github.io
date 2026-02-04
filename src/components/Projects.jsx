@@ -3,6 +3,43 @@ import { useInView } from './hooks/useInView'
 
 const projects = [
   {
+    title: 'Workflow Orchestration System',
+    description: [
+      'Designed and implemented a backend workflow automation service to coordinate multi-step processes with persistent state tracking.',
+      'Built and tested RESTful APIs to trigger workflows, inspect execution state, and manage failure recovery.',
+      'Applied a state-based execution model to ensure task consistency, trace execution history, and support safe re-runs.',
+      'Containerized backend services and workers using Docker to ensure reproducible builds and deployment consistency.'
+    ],
+    tech: ['Python', 'FastAPI', 'Flask', 'REST APIs', 'PostgreSQL', 'Redis', 'HTML/CSS', 'JavaScript', 'Docker'],
+    github: 'https://github.com/gill-amitoj/WorkflowAutomationPlatform',
+    isPrivate: false
+  },
+  {
+    title: 'Kickoff (Event Lottery and Registration System)',
+    period: 'Sept 2025 – Dec 2025',
+    description: [
+      'Designed and implemented an Android application supporting fair event registration using a lottery-based waiting list.',
+      'Built role-based workflows for entrants, organizers, and administrators using Firebase with real-time updates.',
+      'Integrated QR code scanning to enable event discovery, registration, and waiting list enrollment.',
+      'Implemented dynamic reselection logic to manage declines and cancellations while maintaining consistent event state.'
+    ],
+    tech: ['Java', 'Android SDK', 'Firebase', 'QR Code APIs', 'XML', 'Gradle', 'Git'],
+    github: 'https://github.com/CMPUT301F25origin/origin-kickoff',
+    isPrivate: false
+  },
+  {
+    title: 'Content Data Processing & Query Platform',
+    description: [
+      'Built SQL-backed data pipelines to ingest, validate, and structure content datasets for downstream analytics.',
+      'Optimized query patterns and indexing strategies to improve filtering and retrieval efficiency.',
+      'Developed CLI tools to inspect datasets, detect data quality issues, and debug inconsistencies.',
+      'Ensured data reliability and integrity for analytics, reporting, and monitoring workflows.'
+    ],
+    tech: ['Python', 'SQL', 'SQLite', 'JSON', 'CLI Tools'],
+    github: 'https://github.com/gill-amitoj',
+    isPrivate: true
+  },
+  {
     title: 'Statistical Classification and Optimization Study (STAT 413)',
     period: 'Jan 2026 – Present',
     description: [
@@ -12,7 +49,8 @@ const projects = [
       'Applied cross-validation to tune regularization parameters and report accuracy versus runtime performance.'
     ],
     tech: ['R', 'Python', 'Soft-Margin SVM', 'Nonlinear Kernels', 'Cross-Validation', 'scikit-learn', 'NumPy', 'Pandas'],
-    github: 'https://github.com'
+    github: 'https://github.com/gill-amitoj',
+    isPrivate: true
   },
   {
     title: 'Operational Analytics and Utilization Dashboard',
@@ -23,39 +61,8 @@ const projects = [
       'Designed interactive dashboards in Tableau and Plotly to communicate operational insights clearly.'
     ],
     tech: ['Python', 'Pandas', 'SQL', 'Tableau', 'Plotly'],
-    github: 'https://github.com'
-  },
-  {
-    title: 'Workflow Orchestration Engine',
-    description: [
-      'Designed and implemented a backend workflow automation service to coordinate multi-step processes with persistent state tracking.',
-      'Built and tested RESTful APIs using FastAPI to trigger workflows, inspect execution state, and manage failure recovery.',
-      'Applied a state-based execution model to ensure task consistency, trace execution history, and support safe re-runs.',
-      'Containerized backend services and workers using Docker to ensure reproducible builds and deployment consistency.'
-    ],
-    tech: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'Docker'],
-    github: 'https://github.com'
-  },
-  {
-    title: 'Content Data Processing & Query Platform',
-    description: [
-      'Built SQL-backed data pipelines to ingest, validate, and structure content datasets for downstream analytics.',
-      'Optimized query patterns and indexing strategies to improve filtering and retrieval efficiency.',
-      'Developed CLI tools to inspect datasets, detect data quality issues, and debug inconsistencies.',
-      'Ensured data reliability and integrity for analytics, reporting, and monitoring workflows.'
-    ],
-    tech: ['Python', 'SQL', 'PostgreSQL', 'FastAPI', 'CLI'],
-    github: 'https://github.com'
-  },
-  {
-    title: 'Kickoff Android Event Lottery App',
-    description: [
-      'Architected Android app with MVVM pattern for 5K+ users',
-      'Implemented real-time event lottery system with Firebase',
-      'Reduced app load time by 60% through lazy loading'
-    ],
-    tech: ['Kotlin', 'Android', 'Firebase', 'Room', 'Coroutines'],
-    github: 'https://github.com'
+    github: 'https://github.com/gill-amitoj/OperationalAnalyticsPlatform',
+    isPrivate: false
   }
 ]
 
@@ -122,20 +129,15 @@ function ProjectCard({ project }) {
       transition={{ duration: 0.2 }}
       className="border border-muted/50 p-8 hover:border-light/50 transition-colors duration-300 group"
     >
-      <h3 className="text-xl md:text-2xl font-bold mb-6 group-hover:text-light transition-colors">
+      <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-light transition-colors">
         {project.title}
       </h3>
 
-      <ul className="space-y-3 mb-8">
-        {project.description.map((point, i) => (
-          <li key={i} className="text-muted text-sm flex gap-3">
-            <span className="text-accent mt-1">—</span>
-            <span>{point}</span>
-          </li>
-        ))}
-      </ul>
+      {project.period && (
+        <p className="font-mono text-xs text-accent mb-4">{project.period}</p>
+      )}
 
-      <div className="flex flex-wrap gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-6">
         {project.tech.map((tech, i) => (
           <span
             key={i}
@@ -146,15 +148,29 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 font-mono text-sm text-muted hover:text-light transition-colors"
-      >
-        <GithubIcon />
-        <span>View on GitHub</span>
-      </a>
+      <ul className="space-y-3 mb-8">
+        {project.description.map((point, i) => (
+          <li key={i} className="text-muted text-sm flex gap-3">
+            <span className="text-accent mt-1">—</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="flex flex-col gap-1">
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 font-mono text-sm text-muted hover:text-light transition-colors"
+        >
+          <GithubIcon />
+          <span>View on GitHub</span>
+        </a>
+        {project.isPrivate && (
+          <span className="font-mono text-xs text-muted/60 ml-6">School Project (Private)</span>
+        )}
+      </div>
     </motion.article>
   )
 }

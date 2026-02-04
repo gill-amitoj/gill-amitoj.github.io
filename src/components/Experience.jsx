@@ -3,9 +3,9 @@ import { useInView } from './hooks/useInView'
 
 const experiences = [
   {
-    role: 'ML Engineer Intern',
+    role: 'Machine Learning Engineer Intern',
     company: 'PulseMedica',
-    period: '2024 — Present',
+    period: 'Jan 2026 — Present',
     description: [
       'Engineered automated ingestion pipelines for 30 FPS SLO retinal video to support real-time analytics and model training workflows.',
       'Fine-tuned DINOv3 foundation models using custom lightweight adapters to improve medical image localization and segmentation performance.',
@@ -17,13 +17,32 @@ const experiences = [
   },
   {
     role: 'Teaching Assistant',
-    company: 'CMPUT 261 (Introduction to AI), CMPUT 366 (Search & Planning)',
-    period: '2023 — 2024',
+    company: 'CMPUT 261 (Introduction to AI), CMPUT 366 (Search & Planning) — University of Alberta',
+    period: 'Sept 2025 — Present',
     description: [
       'Debugged and tested 1,200+ student submissions for specification compliance, correctness, edge-case handling, and expected behavior.',
       'Designed assignments and 50+ targeted test cases to surface failure modes and prevent incorrect algorithmic outputs.',
       'Identified recurring defect patterns across search and planning implementations and provided structured feedback to improve robustness.',
       'Evaluated algorithmic trade-offs in search systems, balancing correctness, completeness, and performance constraints.'
+    ]
+  },
+  {
+    role: 'Project Team Lead',
+    company: 'Software Engineering Project — University of Alberta',
+    period: 'Sept 2025 — Dec 2025',
+    description: [
+      'Developed an Android application using Java with a clean, modular design to support maintainability and testing.',
+      'Integrated Firebase backend services to enable reliable client–backend communication and consistent state updates.',
+      'Collaborated in Agile workflows to review changes, resolve defects, and coordinate development using Git and GitHub.',
+      'Applied unit, API, and regression testing to validate application flows and overall system behavior.'
+    ]
+  },
+  {
+    role: 'Senior Representative',
+    company: 'Undergraduate Association of Computer Science',
+    period: 'May 2025 — Oct 2025',
+    description: [
+      'Represented undergraduate computing science students in academic and program discussions, supporting student concerns and departmental coordination.'
     ]
   }
 ]
