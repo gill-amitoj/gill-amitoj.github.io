@@ -3,24 +3,24 @@ import { useInView } from './hooks/useInView'
 
 const skillCategories = [
   {
-    name: 'ML',
-    skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'MLflow', 'Hugging Face', 'LangChain']
+    name: 'Languages',
+    skills: ['Python', 'Java', 'SQL', 'JavaScript', 'TypeScript', 'R', 'C#', 'C/C++']
   },
   {
-    name: 'Data',
-    skills: ['Pandas', 'NumPy', 'SQL', 'PostgreSQL', 'MongoDB', 'Pinecone']
+    name: 'Frameworks & Testing',
+    skills: ['FastAPI', 'Flask', 'REST APIs', 'pytest', 'Selenium', 'Appium', 'Unit Testing', 'API Testing', 'Regression Testing']
   },
   {
-    name: 'Backend',
-    skills: ['Python', 'FastAPI', 'Node.js', 'Java', 'REST APIs', 'GraphQL']
+    name: 'Data & Databases',
+    skills: ['PostgreSQL', 'Redis', 'ETL Pipelines', 'JSON', 'Data Validation', 'Indexing', 'Query Optimization']
   },
   {
-    name: 'DevOps',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'GCP', 'CI/CD', 'Terraform']
+    name: 'Cloud & DevOps',
+    skills: ['Azure', 'Azure Databricks', 'Docker', 'Kubernetes', 'Git/GitHub', 'CI/CD', 'Jira']
   },
   {
-    name: 'Tools',
-    skills: ['Git', 'Linux', 'VS Code', 'Jupyter', 'Postman', 'Figma']
+    name: 'GenAI / Agents',
+    skills: ['OpenAI API', 'Azure OpenAI', 'LangChain', 'AutoGen', 'Semantic Kernel', 'Prompt Engineering', 'RAG']
   }
 ]
 

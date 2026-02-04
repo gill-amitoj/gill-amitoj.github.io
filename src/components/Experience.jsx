@@ -129,8 +129,8 @@ function ExperienceItem({ experience, index, inView }) {
       <div className={`${isEven ? 'md:pl-16' : 'md:order-1 md:pr-16'}`}>
         <ul className={`space-y-3 ${!isEven && 'md:text-left'}`}>
           {experience.description.map((point, i) => (
-            <li key={i} className="text-muted text-sm flex gap-3">
-              <span className="text-accent shrink-0">—</span>
+            <li key={i} className="text-light/70 text-sm flex gap-3">
+              <span className="text-light shrink-0">—</span>
               <span>{point}</span>
             </li>
           ))}

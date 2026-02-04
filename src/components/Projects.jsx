@@ -150,8 +150,8 @@ function ProjectCard({ project }) {
 
       <ul className="space-y-3 mb-8">
         {project.description.map((point, i) => (
-          <li key={i} className="text-muted text-sm flex gap-3">
-            <span className="text-accent mt-1">—</span>
+          <li key={i} className="text-light/70 text-sm flex gap-3">
+            <span className="text-light mt-1">—</span>
             <span>{point}</span>
           </li>
         ))}
