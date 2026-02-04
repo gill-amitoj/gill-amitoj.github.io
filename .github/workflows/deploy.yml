@@ -26,14 +26,10 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Clean npm cache
-        run: npm cache clean --force
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Debug vite config
-        run: cat vite.config.js
+      - name: Remove lockfile and install fresh
+        run: |
+          rm -f package-lock.json
+          npm install
       
       - name: Build
         run: npm run build
