@@ -114,13 +114,14 @@ function ExperienceItem({ experience, index, inView }) {
       variants={itemVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
+      whileHover={{ scale: 1.01 }}
       transition={{ delay: index * 0.2 }}
-      className={`relative grid md:grid-cols-2 gap-8 ${isEven ? '' : 'md:text-right'}`}
+      className={`relative grid md:grid-cols-2 gap-8 ${isEven ? '' : 'md:text-right'} p-6 -m-6 border border-transparent hover:border-light/30 hover:bg-light/[0.02] transition-all duration-300 cursor-default`}
     >
       <div className={`${isEven ? 'md:pr-16' : 'md:order-2 md:pl-16'}`}>
         <div className={`${!isEven && 'md:text-left'}`}>
           <span className="font-mono text-sm text-accent">{experience.period}</span>
-          <h3 className="text-2xl font-bold mt-2">{experience.role}</h3>
+          <h3 className="text-2xl font-bold mt-2 group-hover:text-light transition-colors">{experience.role}</h3>
           <p className="text-muted font-mono text-sm mt-1">{experience.company}</p>
         </div>
       </div>
@@ -136,7 +137,7 @@ function ExperienceItem({ experience, index, inView }) {
         </ul>
       </div>
 
-      <div className="absolute left-0 md:left-1/2 top-2 w-3 h-3 border border-light bg-dark -translate-x-1/2" />
+      <div className="absolute left-0 md:left-1/2 top-8 w-3 h-3 border border-light bg-dark -translate-x-1/2 transition-colors duration-300" />
     </motion.div>
   )
 }
