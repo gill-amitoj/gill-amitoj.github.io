@@ -3,33 +3,48 @@ import { useInView } from './hooks/useInView'
 
 const projects = [
   {
-    title: 'PulseMedica ML Tracking Pipeline',
+    title: 'Statistical Classification and Optimization Study (STAT 413)',
+    period: 'Jan 2026 – Present',
     description: [
-      'Engineered end-to-end ML pipeline for real-time patient vitals monitoring',
-      'Reduced model inference latency by 40% through optimization',
-      'Implemented automated retraining workflows with MLflow tracking'
+      'Trained soft-margin SVM classifiers on Canadian federal riding data to predict Liberal versus non-Liberal outcomes.',
+      'Implemented and compared Adagrad, RMSProp, and BFGS to analyze convergence behavior and optimization cost.',
+      'Evaluated linear and nonlinear kernels (RBF, polynomial) to study accuracy and stability trade-offs.',
+      'Applied cross-validation to tune regularization parameters and report accuracy versus runtime performance.'
     ],
-    tech: ['Python', 'TensorFlow', 'MLflow', 'Docker', 'AWS'],
+    tech: ['R', 'Python', 'Soft-Margin SVM', 'Nonlinear Kernels', 'Cross-Validation', 'scikit-learn', 'NumPy', 'Pandas'],
+    github: 'https://github.com'
+  },
+  {
+    title: 'Operational Analytics and Utilization Dashboard',
+    period: 'Dec 2025',
+    description: [
+      'Built analytics pipelines to clean, aggregate, and structure raw system log datasets.',
+      'Performed exploratory analysis of temporal trends to identify recurring anomalies and usage patterns.',
+      'Designed interactive dashboards in Tableau and Plotly to communicate operational insights clearly.'
+    ],
+    tech: ['Python', 'Pandas', 'SQL', 'Tableau', 'Plotly'],
     github: 'https://github.com'
   },
   {
     title: 'Workflow Orchestration Engine',
     description: [
-      'Built distributed task orchestration system handling 10K+ jobs/day',
-      'Designed fault-tolerant architecture with Redis message queuing',
-      'Achieved 99.9% uptime with automated failover mechanisms'
+      'Designed and implemented a backend workflow automation service to coordinate multi-step processes with persistent state tracking.',
+      'Built and tested RESTful APIs using FastAPI to trigger workflows, inspect execution state, and manage failure recovery.',
+      'Applied a state-based execution model to ensure task consistency, trace execution history, and support safe re-runs.',
+      'Containerized backend services and workers using Docker to ensure reproducible builds and deployment consistency.'
     ],
     tech: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'Docker'],
     github: 'https://github.com'
   },
   {
-    title: 'Content Analytics & Query Platform',
+    title: 'Content Data Processing & Query Platform',
     description: [
-      'Developed semantic search engine with vector embeddings',
-      'Processed 1M+ documents with real-time indexing pipeline',
-      'Built RESTful API serving 500+ concurrent users'
+      'Built SQL-backed data pipelines to ingest, validate, and structure content datasets for downstream analytics.',
+      'Optimized query patterns and indexing strategies to improve filtering and retrieval efficiency.',
+      'Developed CLI tools to inspect datasets, detect data quality issues, and debug inconsistencies.',
+      'Ensured data reliability and integrity for analytics, reporting, and monitoring workflows.'
     ],
-    tech: ['Python', 'LangChain', 'Pinecone', 'FastAPI', 'React'],
+    tech: ['Python', 'SQL', 'PostgreSQL', 'FastAPI', 'CLI'],
     github: 'https://github.com'
   },
   {
@@ -79,7 +94,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="font-mono text-sm text-muted">01</span>
+          <span className="font-mono text-sm text-muted">02</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">Featured Projects</h2>
         </motion.div>
 

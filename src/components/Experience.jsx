@@ -7,21 +7,23 @@ const experiences = [
     company: 'PulseMedica',
     period: '2024 — Present',
     description: [
-      'Developing ML pipelines for real-time medical data analysis and patient monitoring systems',
-      'Optimizing model performance and inference latency for production deployment',
-      'Collaborating with cross-functional teams to integrate ML solutions into existing infrastructure',
-      'Implementing automated testing and CI/CD workflows for ML model deployment'
+      'Engineered automated ingestion pipelines for 30 FPS SLO retinal video to support real-time analytics and model training workflows.',
+      'Fine-tuned DINOv3 foundation models using custom lightweight adapters to improve medical image localization and segmentation performance.',
+      'Adapted foundation-model-based segmentation pipelines and evaluated performance using IoU and Dice metrics under high-accuracy targets.',
+      'Applied unsupervised PCA to high-dimensional foundation-model embeddings to extract structure from unlabeled retinal image sequences.',
+      'Optimized neural architectures for low-latency inference, benchmarking against real-time clinical deployment constraints.',
+      'Built evaluation workflows to compare model variants, analyze failure modes, and improve robustness across video sequences.'
     ]
   },
   {
     role: 'Teaching Assistant',
-    company: 'University of Alberta',
+    company: 'CMPUT 261 (Introduction to AI), CMPUT 366 (Search & Planning)',
     period: '2023 — 2024',
     description: [
-      'Led tutorial sessions for undergraduate computer science courses',
-      'Mentored 100+ students in data structures, algorithms, and software development',
-      'Developed course materials and programming assignments',
-      'Provided code reviews and technical guidance on student projects'
+      'Debugged and tested 1,200+ student submissions for specification compliance, correctness, edge-case handling, and expected behavior.',
+      'Designed assignments and 50+ targeted test cases to surface failure modes and prevent incorrect algorithmic outputs.',
+      'Identified recurring defect patterns across search and planning implementations and provided structured feedback to improve robustness.',
+      'Evaluated algorithmic trade-offs in search systems, balancing correctness, completeness, and performance constraints.'
     ]
   }
 ]
@@ -62,7 +64,7 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <span className="font-mono text-sm text-muted">02</span>
+          <span className="font-mono text-sm text-muted">01</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-2">Experience</h2>
         </motion.div>
 

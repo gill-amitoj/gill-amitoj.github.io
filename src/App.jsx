@@ -14,10 +14,10 @@ function App() {
       <main>
         <Hero />
         <Suspense fallback={<SectionLoader />}>
-          <Projects />
+          <Experience />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
-          <Experience />
+          <Projects />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <Skills />
