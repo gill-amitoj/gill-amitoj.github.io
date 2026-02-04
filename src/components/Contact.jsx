@@ -3,18 +3,18 @@ import { motion } from 'framer-motion'
 const contactLinks = [
   {
     name: 'Email',
-    value: 'hello@amitojsingh.com',
-    href: 'mailto:hello@amitojsingh.com'
+    value: 'amitojs1401@gmail.com',
+    href: 'mailto:amitojs1401@gmail.com'
   },
   {
     name: 'LinkedIn',
-    value: 'linkedin.com/in/amitojsingh',
-    href: 'https://linkedin.com/in/amitojsingh'
+    value: 'linkedin.com/in/amitojsingh14',
+    href: 'https://www.linkedin.com/in/amitojsingh14/'
   },
   {
     name: 'GitHub',
-    value: 'github.com/amitojsingh',
-    href: 'https://github.com/amitojsingh'
+    value: 'github.com/gill-amitoj',
+    href: 'https://github.com/gill-amitoj'
   }
 ]
 
@@ -82,7 +82,7 @@ export default function Contact() {
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="mailto:hello@amitojgill.com"
+              href="mailto:amitojs1401@gmail.com"
               className="inline-block font-mono text-base border-2 border-light px-8 py-4 hover:bg-light hover:text-dark transition-all duration-200"
             >
               Send a Message
